@@ -5,12 +5,11 @@ import { UserInterface, userReturn } from './auth.interfaces';
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
-  @Post('/signup')
+  @Post('signup')
   signUp(@Body() dto: UserInterface): UserInterface {
-    console.log(dto);
     return this.authService.signUp(dto);
   }
-  @Post('/signin')
+  @Post('signin')
   signIn(@Body() dto: UserInterface): UserInterface {
     return this.authService.signIn(dto);
   }
